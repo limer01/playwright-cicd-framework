@@ -16,6 +16,12 @@ export default class LoginPage{
         this.incorrectLoginError = page.locator('//*[@id="maincontainer"]/div/div/div/div[1]');
     }
 
+    async login(username: string, password: string){
+        await this.enterLogInName(username);
+        await this.enterPassword(password);
+        await this.clickLoginButton();
+    }
+
     async enterLogInName(loginName: string ) {
         await this.loginName.fill(loginName);
     } 
